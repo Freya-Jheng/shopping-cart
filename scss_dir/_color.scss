@@ -1,0 +1,42 @@
+$white: #ffffff;
+$black: #2A2A2A;
+$pink: #F67599;
+$orange: #F28705;
+$light-gray: #C5C5C5;
+$deep-gray: #727272;
+
+:root {
+   --minus-add: #{$black};
+   --stepCheck-bc-color: #{$black};
+   --step-original-color: #AFB1BD;
+   --stepNum-bc-color: #{$white};
+   --main-bg-color: #{$white};
+   --shoppingCart-bc-color: #{$white};
+   --shoppingCart-border-color: #f0f0f5;
+   --footer-bc-color: #E5E5E5;
+   --unitBtn-color: #F0F0F5;
+   --main-font-color: #{$black};
+   --content-rgba2: #f0f0f5;
+   --footer-rgba6: rgba(255, 255, 255, 0.6);
+   --form-rgba4: rgba(0, 0, 0, 1);
+   --form-border: #2a2a2a;
+   --footer-about-font-color: #808080;
+}
+
+[dark-theme="dark"] {
+   --minus-add: #383838;
+   --stepCheck-bc-color: #333333;
+   --step-original-color: #AFB1BD;
+   --stepNum-bc-color: #{$black};
+   --main-bg-color: #121212;
+   --shoppingCart-bc-color: #383838;
+   --shoppingCart-border-color: #383838;
+   --footer-bc-color: #333333;
+   --unitBtn-color: #808080;
+   --main-font-color: #{$white};
+   --content-rgba2: rgba(255, 255, 255, 0.2);
+   --footer-rgba6: rgba(255, 255, 255, 0.6);
+   --form-rgba4: rgba(255, 255, 255, 0.4);
+   --form-border: #E5E5E5;
+   --footer-about-font-color: rgba(255, 255, 255, 0.6);
+}

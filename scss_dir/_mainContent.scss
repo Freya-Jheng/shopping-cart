@@ -1,0 +1,25 @@
+// basic setting
+.main-content {
+  position: relative;
+  top: 72px;
+  margin: 0 auto;
+  @include pad-media {
+    width: 90%;
+  };
+  @include pc-media {
+    width: 85%;
+  }
+}
+
+// checkout
+.title-checkout {
+  font-size: 24px;
+  font-family: Noto Sans TC;
+  font-weight: 700;
+  line-height: 38px;
+  color: var(--main-font-color);
+  margin-left: 10px;
+  cursor: default;
+}
+
+

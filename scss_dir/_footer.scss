@@ -1,0 +1,82 @@
+footer{
+  display: none;
+  @include pc-media {
+    display: block;
+  }
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 70px;
+  height: 284px;
+  background-color: var(--footer-bc-color);
+  .footer-container {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    @include flex (
+      row, space-between, flex-start
+    );
+    .footer-logo {
+      margin-top: 65px;
+      width: 175.49px;
+      @include flex (row, space-between, center);
+      .logo-image {
+        width: 31px;
+        height: 31px;
+      }
+      .logo-title {
+        width: 134.33px;
+        height: 19px;
+        font-size: 20px;
+        line-height: 19px;
+        font-weight: border;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 700;
+        color: var(--main-font-color);
+      }
+    }
+    .footer-item {
+      @include flex (
+        column, center, flex-start
+      );
+      font-family: 'Noto Sans TC', sans-serif;
+      .item-title {
+        cursor: default;
+        margin-bottom: 24px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        color: var(--main-font-color);
+      }
+      .item-about {
+        @include flex (
+          column, center, flex-start
+        );
+        gap: 5px;
+        .about {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 17px;
+          color: var(--footer-about-font-color);
+          margin-bottom: 5px;
+          &:hover {
+            color: #{$orange};
+          }
+        }
+        .social-media-icons {
+          width: 95px;
+          margin-top: 5px;
+          @include flex (
+            row, space-between, center
+          );
+          .icon {
+            font-size: 20px;
+            color: var(--footer-about-font-color);
+            &:hover {
+              color: #{$orange};
+            }
+          }
+        }
+      }
+    }
+  }
+}  

@@ -1,0 +1,27 @@
+@mixin pad-media {
+  @media all and (min-width: $pad-width) {
+    @content;
+  }
+}
+
+@mixin pc-media {
+  @media all and (min-width: $pc-width) {
+    @content;
+  }
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin getStepperNum($num) {
+  @for $i from 1 through $num {
+   &:nth-child(#{$i}) 
+   .circle-container::after {
+      content: "#{$i}"
+    }
+  }
+}

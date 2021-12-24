@@ -1,0 +1,100 @@
+
+// stepper-panel
+.stepper-panel {
+  height: 32px;
+  margin: 24px 10px;
+  @include pad-media {
+    max-width: 320px;
+  }
+  @include pc-media {
+    max-width: 536px;
+    margin-bottom: 0px;
+  }
+  .step-container {
+    width: 95%;
+    @include flex (
+        row, space-between,center);
+    .step {
+      @include getStepperNum(3);
+      position: relative;
+      text-align: center;
+      .circle-container {
+        width: 32px;
+        height: 32px;
+        background-color: var(--stepNum-bc-color);
+        border: 1px solid var(--step-original-color);
+        color: var(--step-original-color);
+        border-radius: 50%;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 32px;
+      }
+      &.active {
+        .circle-container::after{
+          color: #{$white};
+        }
+        .circle-container {
+          background-color: var(--stepCheck-bc-color) ;
+          border-color: var(--stepCheck-bc-color) ;
+        }
+        .label-container {
+          color: var(--main-font-color);
+        }
+        .connect-line {
+          background-color: var(--main-font-color);
+        }
+      }
+      &.checked
+      {
+        .circle-container::after{
+        content: "\2714";
+        color: #{$white};
+        }
+        .circle-container {
+          background-color: var(--stepCheck-bc-color) ;
+          border-color: var(--stepCheck-bc-color) ;
+        }
+        .label-container {
+          color: var(--main-font-color);
+        }
+        .connect-line {
+          background-color: var(--main-font-color);
+        }
+        
+      } 
+      .label-container {
+        display: none;
+        cursor: default;
+        @include pad-media {
+          display: block;
+          width: 64px;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: -220%;
+          font-size: 16px;
+          text-align: center;
+          font-weight: 400;
+          color: var(--step-original-color);
+        }
+      }
+      .connect-line {
+        position: absolute;
+        top: 15.5px;
+        display: block;
+        width: 60px;
+        height: 1px;
+        left: calc(100% + 32.25px);
+        margin: 0 auto;
+        background-color: var(--step-original-color);
+        @include pad-media {
+          left: calc(325%);
+        }
+        @include pc-media {
+          left: calc(450%);
+        }
+      }
+    }
+  }
+  
+}

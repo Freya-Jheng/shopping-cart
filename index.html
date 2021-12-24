@@ -5,42 +5,289 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpha Camp Shopping Cart</title>
-  <link rel="stylesheet" href="/public/css_dir/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css_dir/main.css">
+  <!-- <script src="https://kit.fontawesome.com/c1b1a1c280.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
   <!-- header -->
   <header>
     <!-- logo -->
     <a href="#" class="logo">
-      <img src="/src/Logo@2x.png" alt="Logo" class="logo-img">
+      <img src="/src/Logo-Icon@2x.png" alt="Logo" class="logo-image">
+      <h1 class="logo-title">Alpha Camp</h1>
     </a>
     <!-- navbar -->
-    <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class='navbar-toggle'>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="" class="nav-link Men">男款</a></li>
-        <li class="nav-item"><a href="" class="nav-link Men">女款</a></li>
-        <li class="nav-item"><a href="" class="nav-link news">最新消息</a></li>
-        <li class="nav-item"><a href="" class="nav-link contacts">聯繫我們</a></li>
-        <li class="nav-item"><a href="" class="nav-link customize">客製商品</a></li>
-      </ul>
+    <div class="header-menu">
+      <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class='navbar-toggle'>
+      <label for="navbar-toggle" class="navbar-toggle-label">
+        <img src="/src/hamburger@2x.png" alt="hamburger" class="hamburger">
+      </label>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="" class="nav-link Men">男款</a></li>
+          <li class="nav-item"><a href="" class="nav-link Men">女款</a></li>
+          <li class="nav-item"><a href="" class="nav-link news">最新消息</a></li>
+          <li class="nav-item"><a href="" class="nav-link contacts">聯繫我們</a></li>
+          <li class="nav-item"><a href="" class="nav-link customize">客製商品</a></li>
+        </ul>
+      </nav>
       <div class="navbar-icons">
-        <a href="#" class="search-icon">
-          <img src="/src/search-icon@2x.png" alt="search-icon" class="nav-icon search-icon">
+        <a href="#" class="nav-icon search-icon">
+          <i class="fas fa-search"></i>
         </a>
-        <a href="#" class="cart-icon">
-          <img src="/src/cart-icon@2x.png" alt="cart-icon" class="nav-icon cart-icon">
+        <a href="#" class="nav-icon cart-icon">
+          <i class="fas fa-shopping-cart"></i>
         </a>
-        <a href="#" class="darkmode">
-          <img src="/src/darkmode-icon@2x.png" alt="darkmode-icon" class="nav-icon darkmode-icon">
+        <label for="dark-mode-toggle" class="dark-mode-label">
+          <div class="moon nav-icon">
+             <i class="far fa-moon"></i>
+          </div>
+          <div class="sun nav-icon d-none">
+            <i class="fas fa-sun"></i>
+          </div>    
+        </label>
+        <input type="checkbox" name="dark-mode-toggle" id="dark-mode-toggle" class="d-none">
+      </div>
+    </div>
+  </header>
+  <!-- main content -->
+  <div class="main-content">
+    <div class="main-title">
+      <h1 class="title-checkout">結帳</h1>
+    </div>
+    <div class="stepper-panel">
+      <div class="step-container">
+        <div class="step active">
+          <div class=" circle-container"></div>
+          <div class="connect-line"></div>
+          <div class="label-container">
+            寄送地址
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle-container"></div>
+          <div class="connect-line"></div>
+          <div class="label-container">
+            運送方式
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle-container"></div>
+          <div class="label-container">
+            付款資訊
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-panel">
+      <!-- first form -->
+      <div class="infor address-content ">
+        <h2 class="inform-title">寄送地址</h2>
+        <form class="address-form">
+          <div class="form-container">
+              <div class="form-row row-1">
+                <span class="form-name">稱謂</span>
+                <select name="salutation" id="form-space" class="form-space1" >
+                  <option style="color: var('--main-font-color';)" value="先生" >先生</option>
+                  <option  value="小姐">小姐</option>
+                </select>
+              </div>
+              <div class="form-row row-2">
+                <span class="form-name">姓名</span>
+                <input class="form-space2" type="text" placeholder="請輸入姓名">
+              </div>
+              <div class="form-row row-3">
+                <span class="form-name">電話</span>
+                <input class="form-space" type="text" placeholder="請輸入行動電話">
+              </div>
+              <div class="form-row row-4">
+                <span class="form-name">Email</span>
+                <input class="form-space" type="text" placeholder="請輸入電子郵件">
+              </div>
+              <div class="form-row row-5">
+                <span class="form-name">縣市</span>
+                <select name="living-place" id="form-space" class="form-space">
+                  <option  value="請選擇縣市">請選擇縣市</option>
+                  <option  value="台北市">台北市</option>
+                  <option  value="台中市">台中市</option>
+                  <option  value="台南市">台南市</option>
+                  <option  value="高雄市">高雄市</option>
+                  <option  value="屏東縣">屏東縣</option>
+                </select>
+              </div>
+              <div class="form-row row-6">
+                <span class="form-name">地址</span>
+                <input class="form-space" type="text" placeholder="請輸入地址">
+              </div>
+          </div>
+        </form>
+      </div>
+      <!-- second form -->
+      <div class="infor shipping-content d-none">
+        <h2 class="inform-title">運送方式</h2>
+        <a href="#" class="shipping-part">
+          <div class="method">
+            <div class="click-circle"></div>
+            <div class="shipping-detail">
+              <div class="shipping-item">
+                <div class="shipping-way form-name">標準運送</div>
+                <div class="shipping-fee">免費</div>
+              </div>
+              <div class="shipping-day">
+                約3~7個工作天
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="shipping-part">
+          <div class="method">
+            <div class="click-circle"></div>
+            <div class="shipping-detail item-2">
+              <div class="shipping-item">
+                <div class="shipping-way DHL form-name">DHL 貨運</div>
+                <div 
+                class="shipping-fee">$500</div>
+              </div>
+              <div class="shipping-day">
+                48小時內送達
+              </div>
+            </div>
+          </div>
         </a>
       </div>
-    </nav>
-    <label for="navbar-toggle" class="navbar-toggle-label">
-      <img src="/src/hamburger@2x.png" alt="hamburger" class="hamburger">
-    </label>
-  </header>
-
+      <!-- third form -->
+      <div class="infor payment-content d-none">
+        <h2 class="inform-title">付款資訊</h2>
+        <form class="payment-form">
+          <div class="form-container">
+            <div class="form-row row-3">
+              <span class="form-name">持卡人姓名</span>
+              <input type="text" class="form-space" placeholder="John Doe">
+            </div>
+            <div class="form-row row-3">
+              <span class="form-name">卡號</span>
+              <input type="text" class="form-space" placeholder="1111 2222 3333 4444">
+            </div>
+            <div class="form-row">
+              <span class="form-name">有效期限</span>
+              <input type="text" class="form-space form-space3" placeholder="MM/YY" onfocus="(this.type='month')" onblur="(this.type='text')">
+            </div>
+            <div class="form-row ccv">
+              <span class="form-name">cvc / ccv</span>
+              <input type="text" class="form-space form-space3" placeholder="123">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="shopping-cart">
+        <div class="cart-title">購物籃</div>
+        <div class="carts-container">
+          <div class="cart">
+            <img class="product-image" src="/src/Block@2x.png" alt="">
+            <div class="product-description">
+              <div class="product-unit">
+                <span class="product-name">破壞補丁修身牛仔褲</span>
+                <div class="units-count">
+                  <a href="#" class="minus unit-controller">-</a>
+                  <div class="unit ">0</div>
+                  <a href="#" class="add unit-controller">+</a>
+                </div>
+              </div>
+              <div class="product-price">$3,999</div>
+            </div>
+          </div>
+          <div class="cart">
+            <img class="product-image" src="/src/paint@2x .png" alt="">
+            <div class="product-description">
+              <div class="product-unit">
+                <span class="product-name">刷色直筒牛仔褲</span>
+                <div class="units-count">
+                  <a href="#" class="minus unit-controller">-</a>
+                  <div class="unit">0</div>
+                  <a href="#" class="add unit-controller">+</a>
+                </div>
+              </div>
+              <div class="product-price">$1,299</div>
+            </div>
+          </div>
+        </div>
+        <div class="total">
+          <div class="total-shipping-fee">
+            <span class="item">
+              運費
+            </span>
+            <span class="price">
+              免費
+            </span>
+          </div>
+          <div class="total-shipping-fee">
+            <span class="item">
+              小計
+            </span>
+            <span class="price">
+              $5,298
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="btn back-to opacity" type="button" >&larr;<span>上一步</span></button>
+      <button class="btn next-to" type="button"><span>下一步</span>&rarr;</button>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer>
+    <div class="footer-container">
+      <a href="#" class="footer-logo">
+        <img src="/src/Logo-Icon@2x.png" alt="Logo" class="logo-image">
+        <h1 class="logo-title">ALPHA Shop</h1>
+      </a>
+      <div class="footer-item">
+        <div class="item-title">客戶服務</div>
+        <div class="item-about">
+          <a href="#" class="about">運送說明</a>
+          <a href="#" class="about">退換貨相關</a>
+          <a href="#" class="about">付款資訊</a>
+          <a href="#" class="about">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-item">
+        <div class="item-title">關於我們</div>
+        <div class="item-about">
+          <a href="#" class="about">品牌故事</a>
+          <a href="#" class="about">媒體聯繫</a>
+          <a href="#" class="about">Press kit</a>
+        </div>
+      </div>
+      <div class="footer-item">
+        <div class="item-title">資訊</div>
+        <div class="item-about">
+          <a href="#" class="about">隱私權政策</a>
+          <a href="#" class="about">Cookie</a>
+          <a href="#" class="about">GDPR</a>
+        </div>
+      </div>
+      <div class="footer-item">
+        <div class="item-title">追蹤ALPHA Shop</div>
+        <div class="item-about">
+          <a href="#" class="about">+886 02123-45678</a>
+          <div class="social-media-icons">
+            <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script src="main.js"></script>
 </body>
 </html>
