@@ -1,0 +1,1 @@
+[You can directly check here](https://Freya-Jheng.github.io/shopping-cart/).
