@@ -198,8 +198,10 @@
     input[type="text"], textarea {
       background-color : var(--main-bg-color); 
     }
+    
     select {
       color: var(--main-font-color);
+      background-color: var(--main-bg-color);
     }
   }
   .infor {
@@ -210,6 +212,7 @@
       border-bottom: 1px solid var(--content-bottom);
     }
   }
+  
   .shopping-cart {
     background-color: var(--shoppingCart-bc-color);
     @include pc-media {

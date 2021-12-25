@@ -775,6 +775,7 @@ nav .nav-item::after {
 }
 .content-panel .form-container select {
   color: var(--main-font-color);
+  background-color: var(--main-bg-color);
 }
 @media all and (min-width: 900px) {
   .content-panel .infor {
