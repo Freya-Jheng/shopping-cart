@@ -3,23 +3,29 @@
 
 This is a demo for shopping-cart.
 
+## Feature
+* Users can click the icon to switch to the dark mode.
+* Users can change units of products in the shopping-cart.
+* The website follow RWD concept, so the view will change based on different devices users use.
+* Users can move on to next step by clicking 'next-to' or 'back-to' buttons.
+
 ## Installation
 
 ### Step 1 - Clone the project
 ```bash
 git clone https://github.com/Freya-Jheng/shopping-cart.git
 ```
-### Step 2 - Install dependencies
-```bash
-npm install
-```
-### Step 3 - Install Sass
-```bash
-npm instal -g sass
-```
-### Step 5 - Get into the project
+### Step 2 - Get into the project 
 ```bash
 cd shopping-cart
+```
+### Step 3 - Install dependencies
+```bash
+npm instal 
+```
+### Step 5 - Install Sass
+```bash
+npm install -g sass
 ```
 ### Step 6 - Run Sass
 ```bash
