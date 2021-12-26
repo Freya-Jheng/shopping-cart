@@ -7,7 +7,7 @@ This is a demo for shopping-cart.
 * Users can click the icon to switch to the dark mode.
 * Users can change units of products in the shopping-cart.
 * The website follow RWD concept, so the view will change based on different devices users use.
-* Users can move on to next step by clicking 'next-to' or 'back-to' buttons.
+* Users can change the step by clicking 'next-to' or 'back-to' buttons.
 
 ## Installation
 
