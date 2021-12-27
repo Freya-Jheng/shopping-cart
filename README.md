@@ -1,7 +1,7 @@
 # ALPHA-CAMP Shopping-cart
 ## This is a demo for shopping-cart.
-## Click here to view the website 
-([ALPHA-CAMP-Shopping-Cart]:https://freya-jheng.github.io/shopping-cart/)
+Click [ALPHA-CAMP-Shopping-Cart][] to view the website 
+[ALPHA-CAMP-Shopping-Cart]:https://freya-jheng.github.io/shopping-cart/
 
 ![image](https://github.com/Freya-Jheng/shopping-cart/blob/main/cover%20picture.png)
 
