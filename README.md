@@ -1,7 +1,9 @@
 # ALPHA-CAMP Shopping-cart
-![image](https://github.com/Freya-Jheng/shopping-cart/blob/main/cover%20picture.png)
+## This is a demo for shopping-cart.
+## Click here to view the website 
+([ALPHA-CAMP-Shopping-Cart]:https://freya-jheng.github.io/shopping-cart/)
 
-This is a demo for shopping-cart.
+![image](https://github.com/Freya-Jheng/shopping-cart/blob/main/cover%20picture.png)
 
 ## Feature
 * Users can click the icon to switch to the dark mode.
