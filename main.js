@@ -10,7 +10,7 @@ const nextToPageBtn = document.querySelector('.next-to')
 const header = document.querySelector('.navbar-icons')
 const darkModeToggle = header.querySelector('#dark-mode-toggle')
 
-// function
+// functions
 function toggleDarkMode (event){
   const darkMode = header.querySelector('.moon')
   const lightMode = header.querySelector('.sun')
@@ -23,7 +23,6 @@ function toggleDarkMode (event){
   darkMode.classList.toggle('d-none')
   lightMode.classList.toggle('d-none')
 }
-
 function handleContentPage (event) {
   event.preventDefault()
   const targetEvent = event.target
@@ -58,7 +57,6 @@ function btnStyleChange (currentPageIndex) {
     nextToPageBtn.firstChild.innerHTML = '下一步'
   }
 }
-
 function changeStepper(currentPageIndex) {
   stepsList.forEach((step, stepIndex)=>{
     step.classList.remove('active')
@@ -70,13 +68,11 @@ function changeStepper(currentPageIndex) {
   stepsList[currentPageIndex].classList.remove('checked')
   stepsList[currentPageIndex].classList.add('active')
 }
-
 function updateFormStyle (nextPage) {
   const currentPage = formList[activePageIndex]
   currentPage.classList.add('d-none')
   nextPage.classList.remove('d-none')
 }
-
 function handleShoppingItemUnit (event) {
   const targetEvent = event.target
   if (targetEvent.matches('.unit-controller')){
@@ -84,18 +80,38 @@ function handleShoppingItemUnit (event) {
     countUnit(targetEvent, cartItem)
   }
 }
-
 function countUnit (targetEvent, cartItem) {
-  const unit = cartItem.querySelector('.unit')
-  const unitNum = unit.innerHTML
-  if(targetEvent.matches('.minus') && unitNum > 0) {
-    unit.innerHTML --
-  } else if (targetEvent.matches('.add')) {
-    unit.innerHTML ++
+  const unitNum = cartItem.querySelector('.unit')
+  const priceNum = cartItem.querySelector('.price-number')
+  const priceNumber = priceNum.innerHTML
+  const firstPrice = document.querySelector('.first-price')
+  const secondPrice = document.querySelector('.second-price')
+  const totalPrice = document.querySelector('.total-price')
+  if (targetEvent.matches('.add') ) {
+    if(cartItem.classList.contains('first-cart')) {
+      unitNum.innerHTML ++
+      priceNum.innerHTML = Number(unitNum.textContent) * 3999
+    } else if (cartItem.classList.contains('second-cart')) {
+      unitNum.innerHTML++
+      priceNum.innerHTML = Number(unitNum.textContent)* 1299
+    }
+  } else if (targetEvent.matches('.minus') && priceNumber > 0) {
+    if (cartItem.classList.contains('first-cart')) {
+      unitNum.innerHTML--
+      priceNum.innerHTML = Number(unitNum.textContent) * 3999
+    } else if (cartItem.classList.contains('second-cart')) {
+      unitNum.innerHTML--
+      priceNum.innerHTML = Number(unitNum.textContent) * 1299
+    }
   }
+  totalPrice.innerHTML = Number(firstPrice.innerHTML) + Number(secondPrice.innerHTML)
 } 
 
-// add listener
+
+
+
+
+// add listeners
 shoppingCart.addEventListener('click', handleShoppingItemUnit)
 buttons.addEventListener('click', handleContentPage)
 darkModeToggle.addEventListener('change', toggleDarkMode)
