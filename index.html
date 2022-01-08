@@ -26,15 +26,15 @@
     <div class="header-menu">
       <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class='navbar-toggle'>
       <label for="navbar-toggle" class="navbar-toggle-label">
-        <img src="./src/hamburger@2x.png" alt="hamburger" class="hamburger">
+          <i class="fas fa-bars hamburger"></i>
       </label>
       <nav class="navbar">
         <ul class="nav-list">
-          <li class="nav-item"><a href="" class="nav-link Men">男款</a></li>
-          <li class="nav-item"><a href="" class="nav-link Men">女款</a></li>
-          <li class="nav-item"><a href="" class="nav-link news">最新消息</a></li>
-          <li class="nav-item"><a href="" class="nav-link contacts">聯繫我們</a></li>
-          <li class="nav-item"><a href="" class="nav-link customize">客製商品</a></li>
+          <li class="nav-item"><a href="#" class="nav-link Men">男款</a></li>
+          <li class="nav-item"><a href="#" class="nav-link Men">女款</a></li>
+          <li class="nav-item"><a href="#" class="nav-link news">最新消息</a></li>
+          <li class="nav-item"><a href="#" class="nav-link contacts">聯繫我們</a></li>
+          <li class="nav-item"><a href="#" class="nav-link customize">客製商品</a></li>
         </ul>
       </nav>
       <div class="navbar-icons">
@@ -131,7 +131,7 @@
       <!-- second form -->
       <div class="infor shipping-content d-none">
         <h2 class="inform-title">運送方式</h2>
-        <a href="#" class="shipping-part">
+        <a href="#" class="shipping-part normal-shipping">
           <div class="method">
             <div class="click-circle"></div>
             <div class="shipping-detail">
@@ -145,7 +145,7 @@
             </div>
           </div>
         </a>
-        <a href="#" class="shipping-part">
+        <a href="#" class="shipping-part DHL-shipping">
           <div class="method">
             <div class="click-circle"></div>
             <div class="shipping-detail item-2">
@@ -196,10 +196,10 @@
                 <div class="units-count">
                   <button type="button" class="minus unit-controller">-</button>
                   <div class="unit ">0</div>
-                  <button type="button" class="add unit-controller first">+</button>
+                  <button type="button" class="add unit-controller">+</button>
                 </div>
               </div>
-              <div class="product-price">$<span class="first-price price-number">0</span></div>
+              <div class="product-price">$<span class="first-price price-number sub-price">0</span></div>
             </div>
           </div>
           <div class="cart second-cart">
@@ -213,7 +213,7 @@
                   <button type="button" class="add unit-controller">+</button>
                 </div>
               </div>
-              <div class="product-price">$<span class="second-price price-number">0</span></div>
+              <div class="product-price">$<span class="second-price price-number sub-price">0</span></div>
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@
               運費
             </span>
             <span class="price">
-              免費
+              $<span class="total-shipping-price sub-price">0</span>
             </span>
           </div>
           <div class="total-shipping-fee">

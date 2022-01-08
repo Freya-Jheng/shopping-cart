@@ -76,10 +76,14 @@ header {
     position: absolute;
     top: 14px;
     left: 21px;
-    width: 20px;
-    height: 15px;
     cursor: pointer;
     line-height: 15px;
+    font-size: 20px;
+    color: var(--main-font-color);
+    &:hover {
+      color: #{$orange};
+    }
+    
     @include pc-media {
       display: none;
     }

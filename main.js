@@ -9,6 +9,12 @@ const backToPageBtn = document.querySelector('.back-to')
 const nextToPageBtn = document.querySelector('.next-to')
 const header = document.querySelector('.navbar-icons')
 const darkModeToggle = header.querySelector('#dark-mode-toggle')
+const shippingContent = document.querySelector('.shipping-content')
+const totalShippingPrice = document.querySelector('.total-shipping-price')
+const firstPrice = document.querySelector('.first-price')
+const secondPrice = document.querySelector('.second-price')
+const totalPrice = document.querySelector('.total-price')
+const contentPanel = document.querySelector('.content-panel')
 
 // functions
 function toggleDarkMode (event){
@@ -64,7 +70,6 @@ function changeStepper(currentPageIndex) {
       step.classList.add('checked')
     }
   })
-
   stepsList[currentPageIndex].classList.remove('checked')
   stepsList[currentPageIndex].classList.add('active')
 }
@@ -73,20 +78,19 @@ function updateFormStyle (nextPage) {
   currentPage.classList.add('d-none')
   nextPage.classList.remove('d-none')
 }
+
 function handleShoppingItemUnit (event) {
   const targetEvent = event.target
   if (targetEvent.matches('.unit-controller')){
     const cartItem = targetEvent.closest('.cart')
     countUnit(targetEvent, cartItem)
-  }
+    addAll(cartItem)
+  } 
 }
 function countUnit (targetEvent, cartItem) {
   const unitNum = cartItem.querySelector('.unit')
   const priceNum = cartItem.querySelector('.price-number')
   const priceNumber = priceNum.innerHTML
-  const firstPrice = document.querySelector('.first-price')
-  const secondPrice = document.querySelector('.second-price')
-  const totalPrice = document.querySelector('.total-price')
   if (targetEvent.matches('.add') ) {
     if(cartItem.classList.contains('first-cart')) {
       unitNum.innerHTML ++
@@ -104,14 +108,33 @@ function countUnit (targetEvent, cartItem) {
       priceNum.innerHTML = Number(unitNum.textContent) * 1299
     }
   }
-  totalPrice.innerHTML = Number(firstPrice.innerHTML) + Number(secondPrice.innerHTML)
-} 
-
-
-
-
+}
+function handleShippingFee (event) {
+ const targetEvent = event.target
+ let subShipping = 0
+ const cartItem = document.querySelector('.cart')
+  if (targetEvent.classList.contains('normal-shipping')) {
+     subShipping = 0
+  } else if (targetEvent.classList.contains('DHL-shipping')) {
+     subShipping = 500
+   }
+  totalShippingPrice.innerHTML = subShipping
+  addAll(cartItem)
+}
+function addAll (cartItem) {
+  const shippingCarts = cartItem.closest('.shopping-cart')
+  const subPrice = shippingCarts.querySelectorAll('.sub-price')
+  let sum = 0
+  subPrice.forEach(subPrice => {
+    if (!isNaN(Number(subPrice.innerHTML))) {
+      sum += Number(subPrice.innerHTML)
+    }
+  })
+  totalPrice.innerHTML = sum
+}
 
 // add listeners
-shoppingCart.addEventListener('click', handleShoppingItemUnit)
 buttons.addEventListener('click', handleContentPage)
 darkModeToggle.addEventListener('change', toggleDarkMode)
+shippingContent.addEventListener('click', handleShippingFee)
+contentPanel.addEventListener('click', handleShoppingItemUnit)

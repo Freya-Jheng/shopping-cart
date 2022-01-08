@@ -265,13 +265,13 @@
           );
           .add, .minus {
             width: 26px;
-            height: 27px;
+            height: 26px;
             color: var(--minus-add);
             background-color: var(--unitBtn-color);
             border-radius: 50%;
-            text-align: center;
+            line-height: 26px;
             font-size: 25px;
-            margin: 8px 0;
+            margin-top: 8px;
             cursor: pointer;
           }
           .unit {
