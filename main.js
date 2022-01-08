@@ -79,6 +79,7 @@ function updateFormStyle (nextPage) {
   nextPage.classList.remove('d-none')
 }
 
+// handle Shopping-cart start
 function handleShoppingItemUnit (event) {
   const targetEvent = event.target
   if (targetEvent.matches('.unit-controller')){
@@ -111,14 +112,16 @@ function countUnit (targetEvent, cartItem) {
 }
 function handleShippingFee (event) {
  const targetEvent = event.target
+ const shippingPart = targetEvent.parentElement.parentElement
  let subShipping = 0
  const cartItem = document.querySelector('.cart')
-  if (targetEvent.classList.contains('normal-shipping')) {
+  if (shippingPart.classList.contains('normal-shipping')) {
      subShipping = 0
-  } else if (targetEvent.classList.contains('DHL-shipping')) {
+  } else if (shippingPart.classList.contains('DHL-shipping')) {
      subShipping = 500
-   }
+  }
   totalShippingPrice.innerHTML = subShipping
+  console.log(Number(totalShippingPrice.innerHTML))
   addAll(cartItem)
 }
 function addAll (cartItem) {
@@ -132,6 +135,8 @@ function addAll (cartItem) {
   })
   totalPrice.innerHTML = sum
 }
+
+// handle Shopping-cart end
 
 // add listeners
 buttons.addEventListener('click', handleContentPage)
